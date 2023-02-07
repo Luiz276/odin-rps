@@ -11,7 +11,7 @@ function getComputerChoice() {
     }
 }
 
-function singleRound(p_choice, c_choice){
+function singleRound(p_choice, c_choice) {
     if (p_choice == c_choice) {
         console.log("Draw")
         return "Draw";
@@ -60,21 +60,38 @@ function game() {
     } else if (p_score > c_score) {
         return "You win";
     }
-    return "You lose"
+    return "You lose";
+}
+
+function updateScore(winner) {
+    if (winner=="p") {
+        p_wins++;
+        p_score.innerHTML = `Your score: ${p_wins}`;
+    } else if (winner=="c") {
+        c_wins++;
+        c_score.innerHTML = `Opponent score: ${c_wins}`;
+    }
 }
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissor = document.querySelector('#scissor');
+const p_score = document.querySelector('#p_score');
+const c_score = document.querySelector('#c_score');
+
+let p_wins = 0;
+let c_wins = 0;
+p_score.innerHTML = `Your score: ${p_wins}`;
+c_score.innerHTML = `Opponent score: ${c_wins}`;
 
 rock.addEventListener('click', () => {
-    alert(singleRound('rock', getComputerChoice()));
+    updateScore(singleRound('rock', getComputerChoice()));
 });
 
 paper.addEventListener('click', () => {
-    alert(singleRound('paper', getComputerChoice()));
+    updateScore(singleRound('paper', getComputerChoice()));
 });
 
 scissor.addEventListener('click', () => {
-    alert(singleRound('scissor', getComputerChoice()));
+    updateScore(singleRound('scissor', getComputerChoice()));
 });
