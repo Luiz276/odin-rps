@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Game</title>
 </head>
-<body>
+<body class="page">
     <div class="info">
-        <h1>Rock paper scissors</h1>
-        <p>This is a Rock paper scissors game. Play with the buttons below:</p>
+        <h1 class="text" class="title">ROCK PAPER SCISSORS</h1>
+        <p class="text">This is a Rock paper scissors game. Play with the buttons below:</p>
     </div>
     <div class="game">
-        <div id="p_score"></div>
-        <div id="c_score"></div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissor">Scissors</button>
+        <div class="score">
+            <div id="p_score" class="text"></div>
+            <div id="c_score" class="text"></div>
+        </div>
+        <div class="buttons">
+            <button class="button" id="rock">Rock</button>
+            <button class="button" id="paper">Paper</button>
+            <button class="button" id="scissor">Scissors</button>
+        </div>
+        <div id="result" class="text"></div>
     </div>
     <script src="rps.js"></script>
 </body>

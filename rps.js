@@ -67,9 +67,13 @@ function updateScore(winner) {
     if (winner=="p") {
         p_wins++;
         p_score.innerHTML = `Your score: ${p_wins}`;
+        result.innerHTML = `YOU WIN THE ROUND`;
     } else if (winner=="c") {
         c_wins++;
         c_score.innerHTML = `Opponent score: ${c_wins}`;
+        result.innerHTML = `OPPONENT WINS THE ROUND`;
+    } else {
+        result.innerHTML = `DRAW`;
     }
 }
 
@@ -78,6 +82,7 @@ const paper = document.querySelector('#paper');
 const scissor = document.querySelector('#scissor');
 const p_score = document.querySelector('#p_score');
 const c_score = document.querySelector('#c_score');
+const result = document.querySelector('#result');
 
 let p_wins = 0;
 let c_wins = 0;
